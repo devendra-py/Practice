@@ -1,22 +1,26 @@
-# working with nested try block exception :
+# example  program to user defined raise exception
+
+user_age = int(input("enter Age"))
+
+def given_age(user_age):
+    if (user_age>=23) and (user_age<=40):
+        print("This is valid Age")
+    else:
+        print("Invalid Age")
 
 try:
-   print("this is outer try block")
-   try:
-      print("this is inner try block")
-   except:
-
-       print("this is inner try block except")
-   else:
-        print("this is inner try block else block")
-
-   finally:
-        print("this is inner try block finnaly")
-
-except:
-   print("this is an outer except block")
-else:
-    print("this is else block of the outer block")
+    given_age(user_age)
+except ValueError:
+    print("pls enter Integers only")
 finally:
-    print("this outer finally block")
+    print("this is finally block")
+
+
+"""
+try:
+   given_age(user_age)
+
+except ValueError:
+   print("pls enter enetegers only")
+   """
 
